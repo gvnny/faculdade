@@ -1,4 +1,5 @@
-# Ignorar arquivos compilados
+# Arquivos de executáveis padrões do GCC
+a.out
 *.out
 *.o
-*.exehello
+*.exe

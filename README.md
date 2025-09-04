@@ -1,23 +1,40 @@
-Carta 1:
 
-Estado: A
-Código: A01
-Nome da Cidade: São Paulo
-População: 12325000
-Área: 1521.11 km²
-PIB: 699.28 bilhões de reais
-Número de Pontos Turísticos: 50
-Densidade Populacional: 8102.47 hab/km²
-PIB per Capita: 56724.32 reais
+# 🃏 Super Trunfo - C
 
-Carta 2:
+Este projeto é uma versão simples do jogo **Super Trunfo**, desenvolvida em linguagem **C**.
+O objetivo é comparar cartas de cidades utilizando diferentes atributos, e cada comparação indica qual cidade vence em determinado critério.
 
-Estado: B
-Código: B02
-Nome da Cidade: Rio de Janeiro
-População: 6748000
-Área: 1200.25 km²
-PIB: 300.50 bilhões de reais
-Número de Pontos Turísticos: 30
-Densidade Populacional: 5622.24 hab/km²
-PIB per Capita: 44532.91 reais
+---
+
+## 📋 Regras do Jogo
+
+Cada carta possui os seguintes atributos:
+
+- **Estado**
+- **Código**
+- **Nome da Cidade**
+- **População**
+- **Área (km²)**
+- **PIB (R$)**
+- **Número de Pontos Turísticos**
+- **Densidade Populacional (hab/km²)**
+- **PIB per Capita (R$)**
+- **Super Poder** (soma de todos os atributos principais)
+
+As comparações seguem as seguintes regras:
+- **População, Área, PIB, Pontos Turísticos, PIB per Capita e Super Poder** → **maior valor vence**.
+- **Densidade Populacional** → **menor valor vence**.
+
+O programa compara automaticamente duas cartas e mostra os resultados.
+
+---
+
+## ⚙️ Como Compilar e Executar
+
+### Pré-requisitos
+- Sistema **Linux (Ubuntu ou similar)**
+- Compilador **GCC** instalado
+
+Verifique se o GCC está instalado com:
+```bash
+gcc --version

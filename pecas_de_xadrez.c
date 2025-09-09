@@ -30,5 +30,22 @@ int main() {
         i++;
     } while (i < 9);
 
+    printf("\n--------------------\n");
+
+    // Cavalo
+    printf("Cavalo\n\n");
+
+    for (int i = 1; i <= 2; i++) {
+        printf("Baixo\n");
+
+        if (i == 2) {
+            int j = 1;
+            while (j <= 1) {
+                printf("Esquerda\n");
+                j++;
+            }
+        }
+    }
+
     return 0;
 }

@@ -1,36 +1,33 @@
 #include <stdio.h>
 
-#define TAM 10
-#define TAM_NAVIO 3
-
 int main() {
-    int tabuleiro[TAM][TAM];
+    int tabuleiro[10][10] = {0};
 
-    // Inicializa tabuleiro com água (0)
-    for (int i = 0; i < TAM; i++) {
-        for (int j = 0; j < TAM; j++) {
-            tabuleiro[i][j] = 0;
-        }
+    // --- Navios Horizontais e Verticais ---
+    // Navio horizontal de tamanho 3, começa em (2,1)
+    for(int j = 1; j <= 3; j++) {
+        tabuleiro[2][j] = 3;
     }
 
-    // Coordenadas iniciais dos navios
-    int linhaNavioH = 2, colunaNavioH = 1;  // horizontal
-    int linhaNavioV = 5, colunaNavioV = 7;  // vertical
-
-    // Posiciona navio horizontal
-    for (int i = 0; i < TAM_NAVIO; i++) {
-        tabuleiro[linhaNavioH][colunaNavioH + i] = 3;
+    // Navio vertical de tamanho 3, começa em (5,7)
+    for(int i = 5; i <= 7; i++) {
+        tabuleiro[i][7] = 3;
     }
 
-    // Posiciona navio vertical
-    for (int i = 0; i < TAM_NAVIO; i++) {
-        tabuleiro[linhaNavioV + i][colunaNavioV] = 3;
+    // --- Navios Diagonais ---
+    // Diagonal de cima direita para baixo esquerda (↙), tamanho 3, começa em (0,9)
+    for(int i = 0; i < 3; i++) {
+        tabuleiro[i][9 - i] = 3;
     }
 
-    // Exibe tabuleiro
-    printf("\nTabuleiro:\n\n");
-    for (int i = 0; i < TAM; i++) {
-        for (int j = 0; j < TAM; j++) {
+    // Diagonal de cima esquerda para baixo direita (↘), tamanho 3, começa em (5,5)
+    for(int i = 0; i < 3; i++) {
+        tabuleiro[5 + i][5 + i] = 3;
+    }
+
+    // --- Exibir Tabuleiro ---
+    for(int i = 0; i < 10; i++) {
+        for(int j = 0; j < 10; j++) {
             printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");

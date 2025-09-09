@@ -2,50 +2,63 @@
 #include <string.h>
 
 int main() {
-    printf("\n--------------------\n");
+    int casasTorre = 5;
+    int casasBispo = 5;
+    int casasRainha = 8;
 
     // Torre
+    printf("\n--------------------\n");
     printf("Torre\n\n");
-    for (int i = 1; i <= 5; i++) {
-        printf("Direita\n");
-    }
-
-    printf("\n--------------------\n");
-
-    // Bispo
-    printf("Bispo\n\n");
-    int i = 1;
-    while (i <= 5) {
-        printf("Cima, Direita\n");
-        i++;
-    }
-
-    printf("\n--------------------\n");
-
-    // Dama
-    i = 1;
-    printf("Dama\n\n");
-    do{
-        printf("Esquerda\n");
-        i++;
-    } while (i < 9);
-
-    printf("\n--------------------\n");
-
-    // Cavalo
-    printf("Cavalo\n\n");
-
-    for (int i = 1; i <= 2; i++) {
-        printf("Baixo\n");
-
-        if (i == 2) {
-            int j = 1;
-            while (j <= 1) {
-                printf("Esquerda\n");
-                j++;
-            }
+    void torre(int n) {
+        if(n > 0) {
+            printf("Direita\n");
+            torre(n - 1);
         }
     }
+    torre(casasTorre);
+
+    // Bispo
+    printf("\n--------------------\n");
+    printf("Bispo\n\n");
+    void bispo(int n) {
+        if(n > 0) {
+            for(int i = 0; i < 1; i++) {
+                printf("Cima ");
+                for (int j = 0; j < 1; j++) {
+                    printf("Direita\n");
+                }
+            }
+            bispo(n - 1);
+        }
+    }
+    bispo(casasBispo);
+
+    // Rainha
+    printf("\n--------------------\n");
+    printf("Rainha\n\n");
+    void rainha(int n) {
+        if(n > 0) {
+            printf("Esquerda\n");
+            rainha(n - 1);
+        }
+    }
+    rainha(casasRainha);
+
+    // Cavalo
+    printf("\n--------------------\n");
+    printf("Cavalo\n\n");
+    for (int i = 1; i <= 2; i++) {
+    for (int j = 1; j <= 1; j++) {
+        if (i < 2) {
+            printf("Cima\n");
+            continue;
+        } else {
+            printf("Cima\n");
+            printf("Direita\n");
+            break;
+        }
+    }
+}
 
     return 0;
 }
